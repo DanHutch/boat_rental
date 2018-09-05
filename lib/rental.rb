@@ -1,8 +1,10 @@
 ## rental.rb
 
+require './lib/boat'
+require './lib/boat'
 require 'pry'
 
-class Rental < dock
+class Rental
 
   def initialize(boat, renter)
     @boat = boat

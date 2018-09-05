@@ -2,6 +2,7 @@
 
 require 'pry'
 require './lib/boat'
+require './lib/rental'
 
 class Dock < Boat
 
@@ -20,6 +21,7 @@ class Dock < Boat
   def rent(boat, renter)
     @rented_boats << boat
     boat.rented = true
+    boat.renter = renter
   end
 
   def log_hour
@@ -39,5 +41,12 @@ class Dock < Boat
       boat.hours_rented * boat.price_per_hour
     end.sum
   end
+
+  # def charges
+  #   charge_list = {}
+  #   @rented_boats.each do |boat|
+  #     charge_list[boat.renter.credit_card_num] = boat.hours_rented * boat.price_per_hour
+  #   end
+  # end
 
 end
