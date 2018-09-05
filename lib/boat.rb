@@ -4,17 +4,20 @@ require 'pry'
 
 class Boat
     attr_reader :type,
-                :price_per_hour,
-                :hours_rented
+                :price_per_hour
+
+    attr_accessor :rented,
+                  :hours_rented
 
   def initialize(type, price_per_hour)
     @type = type
     @price_per_hour = price_per_hour
     @hours_rented = 0
+    @rented = false
   end
 
   def add_hour
-    @hours_rented += 1
+    @hours_rented += 1 if rented
   end
 
 end
